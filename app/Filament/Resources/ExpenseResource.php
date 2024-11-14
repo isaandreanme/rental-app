@@ -36,13 +36,13 @@ class ExpenseResource extends Resource
             ->schema([
                 Grid::make(2)
                     ->schema([
-                        DatePicker::make('date_expense')->label('Date')->required()->columnSpanFull(),
+                        DatePicker::make('date_expense')->label('Date')->required()->columnSpanFull()->translateLabel(),
                         Select::make('vehicle_id')
                             ->relationship('vehicle', 'vehicle_name')
-                            ->label('Vehicle'),
+                            ->label('Vehicle')->translateLabel(),
                         Select::make('driver_id')
                             ->relationship('driver', 'first_name')
-                            ->label('Driver'),
+                            ->label('Driver')->translateLabel(),
                         Select::make('type_date_expense')
                             ->options([
                                 'Fuel' => 'Fuel',
@@ -54,10 +54,10 @@ class ExpenseResource extends Resource
                                 'Cleaning' => 'Cleaning',
                                 'Marketing' => 'Marketing',
                             ])
-                            ->label('Type'),
-                        TextInput::make('total_amount')->numeric()->label('Total Amount'),
-                        FileUpload::make('receipt')->label('Receipt')->columnSpanFull(),
-                        Textarea::make('notes')->label('Notes')->columnSpanFull(),
+                            ->label('Type')->translateLabel(),
+                        TextInput::make('total_amount')->numeric()->label('Total Amount')->translateLabel(),
+                        FileUpload::make('receipt')->label('Receipt')->columnSpanFull()->translateLabel(),
+                        Textarea::make('notes')->label('Notes')->columnSpanFull()->translateLabel(),
                     ])
             ]);
     }
@@ -66,12 +66,12 @@ class ExpenseResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('vehicle_id')
-                    ->label('Vehicle'),
-                TextColumn::make('driver_id')
-                    ->label('Driver'),
-                TextColumn::make('date_expense')->label('Date'),
-                TextColumn::make('total_amount')->numeric()->label('Total Amount'),
+                TextColumn::make('vehicle.vehicle_name')
+                    ->label('Vehicle')->translateLabel(),
+                TextColumn::make('driver.first_name')
+                    ->label('Driver')->translateLabel(),
+                TextColumn::make('date_expense')->label('Date')->translateLabel(),
+                TextColumn::make('total_amount')->numeric()->label('Total Amount')->translateLabel(),
                 SelectColumn::make('type_date_expense')
                     ->options([
                         'Fuel' => 'Fuel',
@@ -83,8 +83,8 @@ class ExpenseResource extends Resource
                         'Cleaning' => 'Cleaning',
                         'Marketing' => 'Marketing',
                     ])
-                    ->label('Type'),
-                TextColumn::make('notes')->label('Notes'),
+                    ->label('Type')->translateLabel(),
+                TextColumn::make('notes')->label('Notes')->translateLabel(),
             ])
             ->filters([
                 //

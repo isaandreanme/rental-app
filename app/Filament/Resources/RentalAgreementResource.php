@@ -36,17 +36,17 @@ class RentalAgreementResource extends Resource
                         Select::make('customer_id')
                             ->relationship('customer', 'first_name')
                             ->label('Customer')
-                            ->required(),
+                            ->required()->translateLabel(),
                         Select::make('driver_id')
                             ->relationship('driver', 'first_name')
-                            ->label('Driver'),
+                            ->label('Driver')->translateLabel(),
                         Select::make('vehicle_id')
                             ->relationship('vehicle', 'vehicle_name')
                             ->label('Vehicle')
-                            ->required(),
-                        TextInput::make('rental_duration')->numeric()->label('Rental Duration (Days)'),
-                        DatePicker::make('rental_start_date')->label('Rental Start Date')->required(),
-                        DatePicker::make('rental_end_date')->label('Rental End Date'),
+                            ->required()->translateLabel(),
+                        TextInput::make('rental_duration')->numeric()->label('Rental Duration (Days)')->translateLabel(),
+                        DatePicker::make('rental_start_date')->label('Rental Start Date')->required()->translateLabel(),
+                        DatePicker::make('rental_end_date')->label('Rental End Date')->translateLabel(),
                         Select::make('status')
                             ->options([
                                 'Draft' => 'Draft',
@@ -55,9 +55,9 @@ class RentalAgreementResource extends Resource
                                 'Cancelled' => 'Cancelled',
                             ])
                             ->default('Draft')
-                            ->label('Status'),
-                        TextInput::make('terms_condition')->label('Number Terms & Condition'),
-                        Textarea::make('description')->label('Description')->columnSpanFull(),
+                            ->label('Status')->translateLabel(),
+                        TextInput::make('terms_condition')->label('Number Terms & Condition')->translateLabel(),
+                        Textarea::make('description')->label('Description')->columnSpanFull()->translateLabel(),
                     ])
 
             ]);
@@ -67,14 +67,14 @@ class RentalAgreementResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('customer.first_name')->label('Driver'),
-                TextColumn::make('driver.first_name')->label('Driver'),
-                TextColumn::make('vehicle.vehicle_name')->label('Vehicle'),
-                TextColumn::make('rental_start_date')->label('Rental Start Date'),
-                TextColumn::make('rental_end_date')->label('Rental End Date'),
-                TextColumn::make('rental_duration')->label('Rental Duration (Days)'),
+                TextColumn::make('customer.first_name')->label('Customer')->translateLabel(),
+                TextColumn::make('driver.first_name')->label('Driver')->translateLabel(),
+                TextColumn::make('vehicle.vehicle_name')->label('Vehicle')->translateLabel(),
+                TextColumn::make('rental_start_date')->label('Rental Start Date')->translateLabel(),
+                TextColumn::make('rental_end_date')->label('Rental End Date')->translateLabel(),
+                TextColumn::make('rental_duration')->label('Rental Duration (Days)')->translateLabel(),
                 TextColumn::make('status')
-                    ->label('Status')->badge(),
+                    ->label('Status')->badge()->translateLabel(),
             ])
             ->filters([
                 //

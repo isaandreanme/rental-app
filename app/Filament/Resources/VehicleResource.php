@@ -35,7 +35,7 @@ class VehicleResource extends Resource
             ->schema([
                 Grid::make(2)
                     ->schema([
-                        TextInput::make('vehicle_name')->required()->label('Vehicle Name'),
+                        TextInput::make('vehicle_name')->required()->label('Vehicle Name')->translateLabel(),
                         Select::make('type')->options([
                             'City Car' => 'City Car',
                             'Sedan' => 'Sedan',
@@ -43,25 +43,25 @@ class VehicleResource extends Resource
                             'Mediumbus' => 'Mediumbus',
                             'Vip' => 'Vip',
 
-                        ])->label('Type'),
-                        // TextInput::make('model')->label('Model'),
-                        // TextInput::make('engine_type')->label('Engine Type'),
-                        // TextInput::make('engine_number')->label('Engine Number'),
-                        TextInput::make('license_plate')->label('License Plate'),
-                        DatePicker::make('registration_expiry_date')->label('Registration Expiry Date'),
-                        TextInput::make('year_of_first_immatriculation')->numeric()->label('Year Of First Immatriculation'),
+                        ])->label('Type')->translateLabel(),
+                        TextInput::make('model')->label('Model')->translateLabel(),
+                        TextInput::make('engine_type')->label('Engine Type')->translateLabel(),
+                        TextInput::make('engine_number')->label('Engine Number')->translateLabel(),
+                        TextInput::make('license_plate')->label('License Plate')->translateLabel(),
+                        DatePicker::make('registration_expiry_date')->label('Registration Expiry Date')->translateLabel(),
+                        TextInput::make('year_of_first_immatriculation')->numeric()->label('Year Of First Immatriculation')->translateLabel(),
                         Select::make('fuel_type')
                             ->options([
                                 'Petrol' => 'Petrol',
                                 'Diesel' => 'Diesel',
                             ])
-                            ->label('Fuel Type'),
-                        TextInput::make('kilometer')->numeric()->label('Kilometer'),
-                        TextInput::make('daily_rate')->numeric()->label('Daily Rate'),
+                            ->label('Fuel Type')->translateLabel(),
+                        TextInput::make('kilometer')->numeric()->label('Kilometer')->translateLabel(),
+                        TextInput::make('daily_rate')->numeric()->label('Daily Rate')->translateLabel(),
                         Select::make('gearbox')->options([
                             'Automatic' => 'Automatic',
                             'Manual' => 'Manual',
-                        ])->default('Automatic')->label('Gearbox'),
+                        ])->default('Automatic')->label('Gearbox')->translateLabel(),
                         Select::make('number_of_seats')
                             ->options([
                                 '4' => '4',
@@ -70,10 +70,10 @@ class VehicleResource extends Resource
                                 '12' => '12',
                                 '15' => '15',
                             ])
-                            ->label('Number Of Seats'),
-                        // TextInput::make('options')->label('Options'),
-                        FileUpload::make('document')->label('Document')->columnSpanFull(),
-                        Textarea::make('notes')->label('Notes')->columnSpanFull(),
+                            ->label('Number Of Seats')->translateLabel(),
+                        TextInput::make('options')->label('Options')->translateLabel(),
+                        FileUpload::make('document')->label('Document')->columnSpanFull()->translateLabel(),
+                        Textarea::make('notes')->label('Notes')->columnSpanFull()->translateLabel(),
                     ])
 
             ]);
@@ -83,14 +83,14 @@ class VehicleResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('vehicle_name')->label('Vehicle Name'),
-                TextColumn::make('type')->label('Type'),
-                TextColumn::make('model')->label('Model'),
-                TextColumn::make('license_plate')->label('License Plate'),
-                TextColumn::make('daily_rate')->label('Daily Rate'),
-                TextColumn::make('gearbox')->label('Gearbox'),
-                TextColumn::make('fuel_type')->label('Fuel Type'),
-                TextColumn::make('kilometer')->label('Kilometer'),
+                TextColumn::make('vehicle_name')->label('Vehicle Name')->translateLabel(),
+                TextColumn::make('type')->label('Type')->translateLabel(),
+                TextColumn::make('model')->label('Model')->translateLabel(),
+                TextColumn::make('license_plate')->label('License Plate')->translateLabel(),
+                TextColumn::make('daily_rate')->label('Daily Rate')->translateLabel(),
+                TextColumn::make('gearbox')->label('Gearbox')->translateLabel(),
+                TextColumn::make('fuel_type')->label('Fuel Type')->translateLabel(),
+                TextColumn::make('kilometer')->label('Kilometer')->translateLabel(),
             ])
             ->filters([
                 //

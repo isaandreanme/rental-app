@@ -32,45 +32,44 @@ class DriverResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
-        ->schema([
-            Grid::make(2)
-                ->schema([
-                    TextInput::make('first_name')->required()->label('First Name'),
-                    TextInput::make('last_name')->label('Last Name'),
-                    TextInput::make('email')->email()->label('Email'),
-                    TextInput::make('phone_number')->tel()->label('Phone Number'),
-                    Select::make('gender')->options([
-                        'Male' => 'Male',
-                        'Female' => 'Female',
-                        'Other' => 'Other',
-                    ])->label('Gender'),
-                    TextInput::make('age')->numeric()->label('Age'),
-                    DatePicker::make('birth_date')->label('Birth Date'),
-                    TextInput::make('address')->label('Address'),
-                    TextInput::make('license_number')->label('License / ID Number'),
-                    DatePicker::make('issue_date')->label('Issue Date'),
-                    DatePicker::make('expiration_date')->label('Expiration Date'),
-                    TextInput::make('reference')->label('Reference'),
-                    FileUpload::make('document')->label('Document'),
-                    FileUpload::make('license')->label('License / ID'),
-                    Textarea::make('notes')->label('Notes')->columnSpanFull(),
-                ])
-
-        ]);
+            ->schema([
+                Grid::make(2)
+                    ->schema([
+                        TextInput::make('first_name')->required()->label('First Name')->translateLabel(),
+                        TextInput::make('last_name')->label('Last Name')->translateLabel(),
+                        TextInput::make('email')->email()->label('Email')->translateLabel(),
+                        TextInput::make('phone_number')->tel()->label('Phone Number')->translateLabel(),
+                        Select::make('gender')->options([
+                            'Male' => 'Male',
+                            'Female' => 'Female',
+                            'Other' => 'Other',
+                        ])->label('Gender')->translateLabel(),
+                        TextInput::make('age')->numeric()->label('Age')->translateLabel(),
+                        DatePicker::make('birth_date')->label('Birth Date')->translateLabel(),
+                        TextInput::make('address')->label('Address')->translateLabel(),
+                        TextInput::make('license_number')->label('License / ID Number')->translateLabel(),
+                        DatePicker::make('issue_date')->label('Issue Date')->translateLabel(),
+                        DatePicker::make('expiration_date')->label('Expiration Date')->translateLabel(),
+                        TextInput::make('reference')->label('Reference')->translateLabel(),
+                        FileUpload::make('document')->label('Document')->translateLabel(),
+                        FileUpload::make('license')->label('License / ID')->translateLabel(),
+                        Textarea::make('notes')->label('Notes')->columnSpanFull()->translateLabel(),
+                    ])
+            ]);
     }
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('first_name')->label('First Name'),
-                TextColumn::make('last_name')->label('Last Name'),
-                TextColumn::make('email')->label('Email'),
-                TextColumn::make('phone_number')->label('Phone Number'),
-                TextColumn::make('gender')->label('Gender'),
-                TextColumn::make('age')->label('Age'),
-                TextColumn::make('birth_date')->label('Birth Date')->date(),
-                TextColumn::make('license_number')->label('License Number'),
+                TextColumn::make('first_name')->label('First Name')->translateLabel(),
+                TextColumn::make('last_name')->label('Last Name')->translateLabel(),
+                TextColumn::make('email')->label('Email')->translateLabel(),
+                TextColumn::make('phone_number')->label('Phone Number')->translateLabel(),
+                TextColumn::make('gender')->label('Gender')->translateLabel(),
+                TextColumn::make('age')->label('Age')->translateLabel(),
+                TextColumn::make('birth_date')->label('Birth Date')->date()->translateLabel(),
+                TextColumn::make('license_number')->label('License / ID Number')->translateLabel(),
             ])
             ->filters([
                 //
