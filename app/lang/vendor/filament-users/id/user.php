@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'group' => 'Pengaturan',
+    'group' => 'Access',
     'resource' => [
         'id' => 'ID',
         'single' => 'Pengguna',
