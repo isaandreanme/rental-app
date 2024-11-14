@@ -6,8 +6,7 @@
 </p>
 
 <br>
-<summary> 
-
+<summary>
 
     - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -21,7 +20,7 @@
     php artisan optimize:clear
     php artisan shield:setup --fresh
     php artisan shield:generate --all
-    php artisan shield:super-admin      
+    php artisan shield:super-admin
     php artisan storage:link
     npm install
     npm run build
@@ -38,7 +37,7 @@
     BOOKING
     INVOICE
     REPORT
-    
+
     - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 </summary>
@@ -63,3 +62,18 @@
     <a href="https://livewire.laravel.com"><img alt="Livewire v3.x" src="https://img.shields.io/badge/Livewire-v3.x-FB70A9?style=for-the-badge"></a>
     <a href="https://php.net"><img alt="PHP 8.1" src="https://img.shields.io/badge/PHP-8.1-777BB4?style=for-the-badge&logo=php"></a>
 </p>
+
+<summary>
+
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    Plugins
+
+    https://filamentphp.com/plugins/3x1io-tomato-users
+    https://filamentphp.com/plugins/njxqlus-progress-bar
+    https://filamentphp.com/plugins/awcodes-versions
+    https://filamentphp.com/plugins/bezhansalleh-shield
+    https://filamentphp.com/plugins/bezhansalleh-language-switch
+
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+</summary>
