@@ -15,11 +15,35 @@
     <img src="https://raw.githubusercontent.com/isaandreanme/rental-app/refs/heads/main/Screenshoot/1.png" />
     <img src="https://raw.githubusercontent.com/isaandreanme/rental-app/refs/heads/main/Screenshoot/2.png" />
 
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    git clone https://github.com/isaandreanme/rental-app.git
+    cd rental-app
+    cp .env.example .env
+    composer update
+    php artisan key:generate
+    php artisan migrate
+    php artisan migrate:fresh --seed
+    php artisan optimize:clear
+    php artisan shield:setup --fresh
+    php artisan storage:link
+    npm install
+    npm run build
+    php artisan serve
+
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    'email'     =   'superadmin@gmail.com'
+    'password'  =   'password'
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     Still In The Development Process
 
     BOOKING
     INVOICE
     REPORT
+    
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 </p>
 </summary>
