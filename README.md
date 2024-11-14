@@ -6,14 +6,8 @@
 </p>
 
 <br>
-<br>
-
-## Screenshot
-
 <summary> 
-<p align="center">
-    <img src="https://raw.githubusercontent.com/isaandreanme/rental-app/refs/heads/main/Screenshoot/1.png" />
-    <img src="https://raw.githubusercontent.com/isaandreanme/rental-app/refs/heads/main/Screenshoot/2.png" />
+
 
     - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -45,6 +39,15 @@
     
     - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+</summary>
+<br>
+
+## Screenshot
+
+<summary> 
+<p align="center">
+    <img src="https://raw.githubusercontent.com/isaandreanme/rental-app/refs/heads/main/Screenshoot/1.png" />
+    <img src="https://raw.githubusercontent.com/isaandreanme/rental-app/refs/heads/main/Screenshoot/2.png" />
 </p>
 </summary>
 
