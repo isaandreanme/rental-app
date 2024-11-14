@@ -8,6 +8,7 @@ export default {
         './resources/**/*.blade.php',
         './resources/**/*.js',
         './resources/**/*.vue',
+        '<path-to-vendor>/awcodes/filament-versions/resources/**/*.blade.php',
     ],
     theme: {
         extend: {
