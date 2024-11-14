@@ -15,7 +15,11 @@
     <img src="https://raw.githubusercontent.com/isaandreanme/rental-app/refs/heads/main/Screenshoot/1.png" />
     <img src="https://raw.githubusercontent.com/isaandreanme/rental-app/refs/heads/main/Screenshoot/2.png" />
 
-    <br>
+    ON PROSES
+
+    BOOKING
+    INVOICE
+    REPORT
 
 </p>
 </summary>
