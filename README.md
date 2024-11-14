@@ -15,7 +15,7 @@
     <img src="https://raw.githubusercontent.com/isaandreanme/rental-app/refs/heads/main/Screenshoot/1.png" />
     <img src="https://raw.githubusercontent.com/isaandreanme/rental-app/refs/heads/main/Screenshoot/2.png" />
 
-    ON PROSES
+    Still In The Development Process
 
     BOOKING
     INVOICE
