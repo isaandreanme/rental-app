@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\BookingResource\Pages;
 use App\Models\Booking;
+use App\Models\Vehicle;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Select;
@@ -73,17 +74,31 @@ class BookingResource extends Resource
                                     ->label('Vehicle')
                                     ->required()
                                     ->reactive()
+                                    ->getOptionLabelFromRecordUsing(fn(Vehicle $record) => "{$record->vehicle_name} (IDR " . number_format($record->daily_rate, 0, ',', '.') . ")")
                                     ->options(function (callable $get) {
                                         $startDate = $get('rental_start_date');
                                         $endDate = $get('rental_end_date');
+
+                                        // Check if both start and end dates are set
                                         if ($startDate && $endDate) {
+                                            // Filter vehicles that are not booked within the date range
                                             return \App\Models\Vehicle::whereDoesntHave('bookings', function ($query) use ($startDate, $endDate) {
                                                 $query->whereBetween('rental_start_date', [$startDate, $endDate])
                                                     ->orWhereBetween('rental_end_date', [$startDate, $endDate]);
-                                            })->pluck('vehicle_name', 'id');
+                                            })
+                                                // Select both vehicle name and id, using the vehicle id as the key and a formatted string for the option label
+                                                ->get()
+                                                ->mapWithKeys(function ($vehicle) {
+                                                    return [
+                                                        $vehicle->id => "{$vehicle->vehicle_name} (IDR " . number_format($vehicle->daily_rate, 0, ',', '.') . ")"
+                                                    ];
+                                                });
                                         }
+
+                                        // If no dates are set, show all vehicles
                                         return \App\Models\Vehicle::pluck('vehicle_name', 'id');
                                     }),
+
                                 Select::make('driver_id')
                                     ->label('Driver')
                                     ->translateLabel()
