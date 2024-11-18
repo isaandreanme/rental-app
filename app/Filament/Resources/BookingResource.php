@@ -74,7 +74,7 @@ class BookingResource extends Resource
                                     ->label('Vehicle')
                                     ->required()
                                     ->reactive()
-                                    ->getOptionLabelFromRecordUsing(fn(Vehicle $record) => "{$record->vehicle_name} (IDR " . number_format($record->daily_rate, 0, ',', '.') . ")")
+                                    // ->getOptionLabelFromRecordUsing(fn(Vehicle $record) => "{$record->vehicle_name} - (Rp " . number_format($record->daily_rate, 0, ',', '.') . ") Day")
                                     ->options(function (callable $get) {
                                         $startDate = $get('rental_start_date');
                                         $endDate = $get('rental_end_date');
@@ -90,7 +90,7 @@ class BookingResource extends Resource
                                                 ->get()
                                                 ->mapWithKeys(function ($vehicle) {
                                                     return [
-                                                        $vehicle->id => "{$vehicle->vehicle_name} (IDR " . number_format($vehicle->daily_rate, 0, ',', '.') . ")"
+                                                        $vehicle->id => "{$vehicle->vehicle_name} - (Rp " . number_format($vehicle->daily_rate, 0, ',', '.') . ") /Day"
                                                     ];
                                                 });
                                         }
