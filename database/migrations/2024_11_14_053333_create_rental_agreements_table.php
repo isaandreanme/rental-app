@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('rental_agreements', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId('customer_id')->constrained('customers')->onDelete('cascade')->nullable();
-            $table->foreignId('driver_id')->constrained('drivers')->onDelete('cascade')->nullable();
-            $table->foreignId('vehicle_id')->constrained('vehicles')->onDelete('cascade')->nullable();
+            $table->foreignId('customer_id')->nullable()->constrained('customers')->onDelete('cascade');
+            $table->foreignId('driver_id')->nullable()->constrained('drivers')->onDelete('cascade');
+            $table->foreignId('vehicle_id')->nullable()->constrained('vehicles')->onDelete('cascade');
             $table->date('rental_start_date')->nullable();
             $table->date('rental_end_date')->nullable();
             $table->integer('rental_duration')->nullable();

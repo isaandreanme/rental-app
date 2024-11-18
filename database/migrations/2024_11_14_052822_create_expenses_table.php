@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('expenses', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId('vehicle_id')->constrained()->onDelete('cascade')->nullable();
-            $table->foreignId('driver_id')->constrained()->onDelete('cascade')->nullable();
+            $table->foreignId('vehicle_id')->nullable()->constrained()->onDelete('cascade');
+            $table->foreignId('driver_id')->nullable()->constrained()->onDelete('cascade');
             $table->date('date_expense')->nullable();
             $table->decimal('total_amount', 10, 2)->nullable();
             $table->string('receipt')->nullable();

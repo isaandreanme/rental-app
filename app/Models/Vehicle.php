@@ -10,4 +10,9 @@ class Vehicle extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
+    }
 }

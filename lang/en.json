@@ -66,5 +66,8 @@
     "Automatic": "Automatic",
     "Manual": "Manual",
     "Number Of Seats": "Number Of Seats",
-    "Options": "Options"
+    "Options": "Options",
+
+    "Booking Number": "Booking Number"
+
 }
